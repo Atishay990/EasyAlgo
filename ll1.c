@@ -59,6 +59,26 @@ void printList()
   }
 }
 
+void reverse(int n)
+{
+  int i=1;
+  struct Node* cur=head;
+  struct Node* pre = NULL;
+  struct Node* nex = NULL;
+//  tmp->next=h->next;
+  printf("mudda\n");
+  while(cur!=NULL)
+  {
+    nex=cur->next;
+    cur->next=pre;
+    pre=cur;
+    cur=nex;
+  }
+  printf("Reversed\n");
+  head=pre;
+
+}
+
 int main()
 {
   int i,n,val,pos;
@@ -81,6 +101,16 @@ int main()
 
   printf("after deletion\n");
   printList();
+
+  printf("Enter 1 if you want to reverse the linked list\n");
+  int r;
+  scanf("%d",&r);
+  if(r==1)
+  {
+    reverse(n);
+    printf("Linked list after reversing is = \n");
+    printList();
+  }
 
   return 0;
 }

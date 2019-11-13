@@ -65,8 +65,6 @@ void reverse(int n)
   struct Node* cur=head;
   struct Node* pre = NULL;
   struct Node* nex = NULL;
-//  tmp->next=h->next;
-  printf("mudda\n");
   while(cur!=NULL)
   {
     nex=cur->next;
@@ -74,7 +72,7 @@ void reverse(int n)
     pre=cur;
     cur=nex;
   }
-  printf("Reversed\n");
+
   head=pre;
 
 }
